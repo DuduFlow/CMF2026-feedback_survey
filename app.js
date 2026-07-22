@@ -28,6 +28,7 @@ const progressText=document.querySelector("#progressText");
 let currentSubmissionId="";
 let lastPayload=null;
 let showingAllCourses=false;
+let resultsOnlyMode=false;
 
 function updateProgress(){
   let answered=0;
@@ -124,11 +125,37 @@ function completeSubmission(id){
 }
 
 function showThanksShell(){
+  if(!resultsOnlyMode){
+    document.querySelector("#resultMark").textContent="✓";
+    document.querySelector("#resultEyebrow").textContent="THANK YOU";
+    document.querySelector("#resultTitle").textContent="收到你的回饋了！";
+    document.querySelector("#resultCopy").textContent="謝謝你和我們一起走過青島、泰山與濟南。期待下一段旅程，再次一起出發。";
+    document.querySelector("#backToSurvey").hidden=true;
+  }
   form.hidden=true; document.querySelector(".progress-wrap").hidden=true;
   const thanks=document.querySelector("#thanks"); thanks.hidden=false; thanks.classList.add("thanks-enter");
   document.querySelector("#resultsLoading").hidden=false; document.querySelector("#resultsError").hidden=true; document.querySelector("#resultsContent").hidden=true;
   thanks.scrollIntoView({behavior:reducedMotion?"auto":"smooth",block:"start"});
 }
+
+document.querySelector("#viewResults").addEventListener("click",()=>{
+  resultsOnlyMode=true;
+  document.querySelector("#resultMark").textContent="↗";
+  document.querySelector("#resultEyebrow").textContent="LIVE RESULTS";
+  document.querySelector("#resultTitle").textContent="大家的即時回饋";
+  document.querySelector("#resultCopy").textContent="看看旅伴們最真實的旅程感受，以及下一站長沙的參加意願。";
+  document.querySelector("#backToSurvey").hidden=false;
+  showThanksShell(); loadAndRenderResults();
+});
+
+document.querySelector("#backToSurvey").addEventListener("click",()=>{
+  resultsOnlyMode=false;
+  document.querySelector("#thanks").hidden=true;
+  document.querySelector("#thanks").classList.remove("thanks-enter");
+  form.hidden=false; document.querySelector(".progress-wrap").hidden=false;
+  document.querySelector("#backToSurvey").hidden=true;
+  document.querySelector(".hero").scrollIntoView({behavior:reducedMotion?"auto":"smooth",block:"start"});
+});
 
 async function loadAndRenderResults(){
   setResultsLoading(true);

@@ -20,6 +20,7 @@
       <h1>這趟旅程，<br>想聽聽你的感受</h1>
       <p class="lead">青島・泰山・濟南｜07.14–07.21</p>
       <div class="hero-meta"><span>10 道題目</span><span>約 3 分鐘</span><span>姓名選填</span></div>
+      <button class="view-results-button" id="viewResults" type="button">先看即時統計結果 <b>↗</b></button>
     </div>
   </header>
 
@@ -107,14 +108,14 @@
     </form>
 
     <section class="thanks" id="thanks" hidden aria-live="polite">
-      <div class="thanks-mark">✓</div>
-      <p class="eyebrow">THANK YOU</p>
-      <h2>收到你的回饋了！</h2>
-      <p>謝謝你和我們一起走過青島、泰山與濟南。期待下一段旅程，再次一起出發。</p>
+      <div class="thanks-mark" id="resultMark">✓</div>
+      <p class="eyebrow" id="resultEyebrow">THANK YOU</p>
+      <h2 id="resultTitle">收到你的回饋了！</h2>
+      <p id="resultCopy">謝謝你和我們一起走過青島、泰山與濟南。期待下一段旅程，再次一起出發。</p>
       <div class="changsha"><span>下一站</span><strong>長沙 CMF 2027</strong></div>
       <div class="results-toolbar">
         <span id="lastUpdated">統計載入中…</span>
-        <button id="refreshResults" type="button">更新結果</button>
+        <div><button id="backToSurvey" type="button" hidden>返回填寫</button><button id="refreshResults" type="button">更新結果</button></div>
       </div>
       <div class="results-loading" id="resultsLoading" role="status">
         <span class="status-spinner" aria-hidden="true"></span><b>正在取得大家的最新結果…</b>
