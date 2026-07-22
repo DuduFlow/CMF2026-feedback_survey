@@ -24,7 +24,7 @@
   </header>
 
   <main>
-    <div class="progress-wrap" aria-hidden="true">
+    <div class="progress-wrap" role="status" aria-label="問卷完成進度">
       <div class="progress-copy"><span>完成進度</span><strong id="progressText">0%</strong></div>
       <div class="progress-track"><div id="progressBar"></div></div>
     </div>
@@ -98,19 +98,39 @@
       </section>
 
       <button class="submit-button" type="submit"><span>送出我的回饋</span><b>→</b></button>
+      <div class="submit-status" id="submitStatus" hidden role="status">
+        <span class="status-spinner" aria-hidden="true"></span>
+        <div><b>資料已送出，正在確認寫入</b><p>請不要重複送出，可按下方按鈕重新確認。</p></div>
+        <button id="retryConfirm" type="button">重新確認</button>
+      </div>
       <p class="privacy">回饋僅供本次活動檢討與未來行程規劃使用。</p>
     </form>
 
-    <section class="thanks" id="thanks" hidden>
+    <section class="thanks" id="thanks" hidden aria-live="polite">
       <div class="thanks-mark">✓</div>
       <p class="eyebrow">THANK YOU</p>
       <h2>收到你的回饋了！</h2>
       <p>謝謝你和我們一起走過青島、泰山與濟南。期待下一段旅程，再次一起出發。</p>
       <div class="changsha"><span>下一站</span><strong>長沙 CMF 2027</strong></div>
+      <div class="results-toolbar">
+        <span id="lastUpdated">統計載入中…</span>
+        <button id="refreshResults" type="button">更新結果</button>
+      </div>
+      <div class="results-loading" id="resultsLoading" role="status">
+        <span class="status-spinner" aria-hidden="true"></span><b>正在取得大家的最新結果…</b>
+        <div class="skeleton-lines"><i></i><i></i><i></i></div>
+      </div>
+      <div class="results-error" id="resultsError" hidden role="alert">
+        <b>回饋已送達，但統計暫時載入失敗</b>
+        <button id="retryResults" type="button">重新載入統計</button>
+      </div>
+      <div id="resultsContent" hidden>
+      <div class="summary-cards" id="summaryCards"></div>
       <div class="all-results">
         <div class="all-results-head"><span>FULL RESULTS</span><h3>大家的完整回覆統計</h3><p>所有題目的統計結果都公開呈現</p></div>
-        <section class="result-section"><h4>01–06｜滿意度評分</h4><div class="rating-stats" id="ratingStats"></div></section>
+        <section class="result-section"><h4>01–06｜滿意度評分</h4><p class="section-hint">點選題目可查看 1～5 星分布</p><div class="rating-stats" id="ratingStats"></div></section>
         <section class="result-section"><h4>07｜最有印象的三堂課</h4><div class="course-stats" id="courseStats"></div></section>
+        <button class="expand-courses" id="expandCourses" type="button" hidden>展開全部 17 堂</button>
         <section class="result-section"><h4>08｜最喜歡或希望改善</h4><div class="feedback-list" id="feedbackList"></div></section>
       </div>
       <div class="results" id="voteResults" aria-live="polite">
@@ -124,6 +144,7 @@
       <div class="message-wall">
         <div class="wall-head"><div><span>TRAVEL VOICES</span><h3>旅伴留言板</h3></div><b id="messageTotal">0 則</b></div>
         <div class="message-list" id="messageList"></div>
+      </div>
       </div>
     </section>
   </main>
