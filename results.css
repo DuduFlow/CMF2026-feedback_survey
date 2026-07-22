@@ -1,0 +1,75 @@
+.results {
+  margin-top: 18px;
+  padding: 21px 18px;
+  border-radius: 19px;
+  background: linear-gradient(155deg, #113858, #1c6884);
+  color: #fff;
+  text-align: left;
+  overflow: hidden;
+}
+.results-head { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:18px; }
+.results-head span { font-size:10px; letter-spacing:.18em; color:#9edbe4; font-weight:800; }
+.results-head h3 { margin:2px 0 0; font-size:19px; }
+.vote-total { text-align:center; min-width:68px; }
+.vote-total strong { display:block; font-family:Georgia,serif; color:#fff; font-size:30px; line-height:1; }
+.vote-total small { font-size:10px; color:#b9d9e0; }
+.result-bars { display:grid; gap:13px; }
+.bar-row.is-yours { padding:9px; margin:-9px; border-radius:11px; background:rgba(255,255,255,.1); }
+.bar-label { display:flex; justify-content:space-between; gap:10px; font-size:12px; margin-bottom:5px; }
+.bar-label b { font-size:12px; }
+.bar-label span { color:#cce4e8; }
+.bar-track { height:9px; background:rgba(255,255,255,.14); border-radius:20px; overflow:hidden; }
+.bar-fill { height:100%; width:0; border-radius:20px; background:linear-gradient(90deg,#6ed5d1,#f2cf85); transition:width 1s cubic-bezier(.2,.8,.2,1); }
+.is-yours .bar-label b::after { content:" · 你的選擇"; color:#f2cf85; font-size:10px; }
+.your-vote { text-align:center !important; color:#bfe2e7 !important; font-size:11px !important; margin:18px 0 0 !important; }
+.share-button { margin-top:14px; border:1px solid #bedde2; background:#eef9fa; color:#113858; border-radius:13px; padding:12px 18px; font:inherit; font-weight:800; cursor:pointer; width:100%; }
+.share-button.done { background:#e2f4ec; color:#267158; }
+.message-question .text-input { margin-bottom:10px; }
+.pick-status { display:flex; align-items:center; justify-content:space-between; margin:-5px 0 12px; color:#6c7e89; font-size:11px; }
+.pick-status strong { color:#2b7194; font-size:13px; }
+.course-options { display:grid; grid-template-columns:1fr 1fr; gap:9px; }
+.course-options input { position:absolute; opacity:0; pointer-events:none; }
+.course-options label { cursor:pointer; min-width:0; }
+.course-options label>span { min-height:83px; display:flex; flex-direction:column; padding:11px 12px; border:1.5px solid #dce7e9; border-radius:13px; background:#fbfdfd; transition:.18s; }
+.course-options small { color:#6b9aae; font-size:9px; font-weight:800; letter-spacing:.1em; }
+.course-options b { margin-top:3px; color:#173044; font-size:13px; line-height:1.3; }
+.course-options em { margin-top:auto; color:#6c7e89; font-size:11px; font-style:normal; }
+.course-options input:checked+span { color:#fff; border-color:#2b7194; background:linear-gradient(145deg,#2f819f,#1e5b7f); box-shadow:0 7px 16px rgba(32,105,135,.2); transform:translateY(-1px); }
+.course-options input:checked+span small,.course-options input:checked+span b,.course-options input:checked+span em { color:#fff; }
+.course-options input:disabled+span { opacity:.42; cursor:not-allowed; }
+.message-wall { margin-top:15px; padding:20px 18px; border:1px solid #dce7e9; border-radius:19px; background:#f9fcfc; text-align:left; }
+.wall-head { display:flex; justify-content:space-between; align-items:end; gap:12px; margin-bottom:14px; }
+.wall-head span { color:#2b7194; font-size:9px; font-weight:800; letter-spacing:.16em; }
+.wall-head h3 { margin:1px 0 0; font-size:19px; }
+.wall-head>b { color:#6c7e89; font-size:11px; }
+.message-list { display:grid; gap:10px; }
+.message-card { padding:13px 14px; border-radius:13px; background:#fff; box-shadow:0 5px 18px rgba(19,54,75,.07); }
+.message-meta { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:4px; color:#2b7194; font-size:11px; font-weight:800; }
+.message-meta time { color:#98a6ad; font-weight:500; }
+.message-card p { margin:0 !important; color:#314a5a !important; font-size:13px !important; overflow-wrap:anywhere; }
+.message-card.is-new { border-left:4px solid #dcae62; animation:messageIn .5s ease both; }
+.empty-wall { color:#83949c; text-align:center; font-size:12px; padding:18px 0; }
+@keyframes messageIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:none} }
+@media(max-width:480px) { .thanks{padding:38px 18px}.results{padding:18px 14px}.course-options{grid-template-columns:1fr} }
+@media(prefers-reduced-motion:reduce) { .bar-fill{transition:none} }
+.course-options>h3 { grid-column:1/-1; margin:12px 0 1px; padding:7px 10px; border-radius:9px; color:#2b7194; background:#eaf6f7; font-size:12px; }
+.all-results { margin-top:18px; text-align:left; }
+.all-results-head { padding:18px; border-radius:17px 17px 0 0; color:#fff; background:linear-gradient(135deg,#356f81,#183e60); }
+.all-results-head span { color:#a9dce3; font-size:9px; font-weight:800; letter-spacing:.17em; }
+.all-results-head h3 { margin:3px 0 1px; font-size:19px; }
+.all-results-head p { margin:0 !important; color:#c8e0e5 !important; font-size:11px !important; }
+.result-section { padding:17px; border:1px solid #dce7e9; border-top:0; background:#fbfdfd; }
+.result-section:last-child { border-radius:0 0 17px 17px; }
+.result-section h4 { margin:0 0 13px; color:#173f66; font-size:13px; }
+.rating-stats,.course-stats,.feedback-list { display:grid; gap:10px; }
+.rating-stat { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:4px 10px; }
+.rating-stat b { font-size:12px; }
+.rating-stat strong { color:#2b7194; font-family:Georgia,serif; font-size:17px; }
+.mini-track { grid-column:1/-1; height:6px; border-radius:9px; background:#e2ebed; overflow:hidden; }
+.mini-fill { height:100%; border-radius:9px; background:linear-gradient(90deg,#56b7ba,#dcae62); }
+.course-stat { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:5px 10px; align-items:center; }
+.course-stat b { font-size:11px; overflow-wrap:anywhere; }
+.course-stat span { color:#2b7194; font-size:11px; font-weight:800; }
+.feedback-card { padding:11px 12px; border-left:3px solid #8ec4ca; border-radius:9px; background:#fff; }
+.feedback-card b { display:block; color:#2b7194; font-size:10px; }
+.feedback-card p { margin:3px 0 0 !important; color:#415766 !important; font-size:12px !important; }

@@ -1,1 +1,134 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173f66">
+  <meta name="description" content="2026 CMF 青島・泰山・濟南之旅滿意度調查">
+  <title>CMF 2026｜旅程滿意度調查</title>
+  <link rel="icon" href="assets/logo-cmf.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="results.css">
+</head>
+<body>
+  <header class="hero">
+    <img class="hero-photo" src="assets/cover-jinan-mobile.jpeg" alt="濟南城市與湖畔風景">
+    <div class="hero-shade"></div>
+    <div class="hero-inner">
+      <img class="brand" src="assets/logo-cmf.png" alt="CMF">
+      <p class="eyebrow">CMF 2026 · JOURNEY REVIEW</p>
+      <h1>這趟旅程，<br>想聽聽你的感受</h1>
+      <p class="lead">青島・泰山・濟南｜07.14–07.21</p>
+      <div class="hero-meta"><span>10 道題目</span><span>約 3 分鐘</span><span>姓名選填</span></div>
+    </div>
+  </header>
 
+  <main>
+    <div class="progress-wrap" aria-hidden="true">
+      <div class="progress-copy"><span>完成進度</span><strong id="progressText">0%</strong></div>
+      <div class="progress-track"><div id="progressBar"></div></div>
+    </div>
+
+    <form id="surveyForm" novalidate>
+
+      <section class="intro-card">
+        <span class="card-icon">✦</span>
+        <div><h2>謝謝你一起完成這段旅程</h2><p>每一份回饋，都是我們下次把旅程安排得更好的重要參考。</p></div>
+      </section>
+
+      <section class="question optional-info">
+        <div class="question-head"><span class="number">選填</span><div><h2>你的姓名</h2><p>也可以匿名留下回饋</p></div></div>
+        <input class="text-input" type="text" name="姓名" autocomplete="name" placeholder="請輸入姓名（選填）">
+      </section>
+
+      <div id="ratingQuestions"></div>
+
+      <section class="question course-picks" data-question="7">
+        <div class="question-head"><span class="number">07</span><div><h2>你最有印象的三堂課？</h2><p>從已有完整筆記的課程中選擇三堂</p></div></div>
+        <div class="pick-status"><span>已選</span><strong id="pickCount">0 / 3</strong></div>
+        <div class="course-options">
+          <h3>DAY 1｜7/18 開篇</h3>
+          <label><input type="checkbox" name="最有印象的三堂課" value="百歲時代｜尹燁" required><span><small>DAY 1</small><b>百歲時代</b><em>尹燁</em></span></label>
+          <label><input type="checkbox" name="最有印象的三堂課" value="自媒體事件營銷｜張一凡"><span><small>DAY 1</small><b>自媒體事件營銷</b><em>張一凡</em></span></label>
+          <label><input type="checkbox" name="最有印象的三堂課" value="壽險常青樹｜褚東東"><span><small>DAY 1</small><b>壽險常青樹</b><em>褚東東</em></span></label>
+          <label><input type="checkbox" name="最有印象的三堂課" value="家辦思維｜余巧琴"><span><small>DAY 1</small><b>家辦思維</b><em>余巧琴</em></span></label>
+          <label><input type="checkbox" name="最有印象的三堂課" value="家企風險隔離｜國旭"><span><small>DAY 1</small><b>家企風險隔離</b><em>國旭</em></span></label>
+          <h3>DAY 2｜7/19 中篇</h3>
+          <label><input type="checkbox" name="最有印象的三堂課" value="認知突圍｜李偉彬"><span><small>DAY 2</small><b>認知突圍</b><em>李偉彬</em></span></label>
+          <label><input type="checkbox" name="最有印象的三堂課" value="長期主義｜于忠濱"><span><small>DAY 2</small><b>長期主義</b><em>于忠濱</em></span></label>
+          <label><input type="checkbox" name="最有印象的三堂課" value="團隊文化｜王利忠"><span><small>DAY 2</small><b>團隊文化</b><em>王利忠</em></span></label>
+          <label><input type="checkbox" name="最有印象的三堂課" value="00後組織發展｜吳修毅"><span><small>DAY 2</small><b>00 後組織發展</b><em>吳修毅</em></span></label>
+          <label><input type="checkbox" name="最有印象的三堂課" value="投保心理學｜羅淑瓊"><span><small>DAY 2</small><b>投保心理學</b><em>羅淑瓊</em></span></label>
+          <label><input type="checkbox" name="最有印象的三堂課" value="企業家銷售邏輯｜曹紀平"><span><small>DAY 2</small><b>企業家銷售邏輯</b><em>曹紀平</em></span></label>
+          <label><input type="checkbox" name="最有印象的三堂課" value="高客服務與面談｜錢文曦"><span><small>DAY 2</small><b>高客服務與面談</b><em>錢文曦</em></span></label>
+          <label><input type="checkbox" name="最有印象的三堂課" value="IP打造與直播獲客｜李揚"><span><small>DAY 2</small><b>IP 打造與直播獲客</b><em>李揚</em></span></label>
+          <h3>DAY 3｜7/20 尾篇</h3>
+          <label><input type="checkbox" name="最有印象的三堂課" value="2026資產配置｜林海川"><span><small>DAY 3</small><b>2026 資產配置</b><em>林海川</em></span></label>
+          <label><input type="checkbox" name="最有印象的三堂課" value="績優與高客深度經營｜趙楊"><span><small>DAY 3</small><b>績優與高客深度經營</b><em>趙楊</em></span></label>
+          <label><input type="checkbox" name="最有印象的三堂課" value="四個財務思維｜齊昊"><span><small>DAY 3</small><b>四個財務思維</b><em>齊昊</em></span></label>
+          <label><input type="checkbox" name="最有印象的三堂課" value="保險的智慧｜王辰"><span><small>DAY 3</small><b>保險的智慧</b><em>王辰</em></span></label>
+        </div>
+        <p class="error" role="alert"></p>
+      </section>
+
+      <section class="question" data-question="8">
+        <div class="question-head"><span class="number">08</span><div><h2>這趟旅程中，最喜歡或最希望改善的是什麼？</h2><p>一句話就可以，也可以先跳過</p></div></div>
+        <textarea name="旅程回饋" rows="4" maxlength="300" placeholder="例如：最喜歡泰山行程；希望自由活動時間再多一些……"></textarea>
+        <div class="counter"><span id="charCount">0</span>/300</div>
+      </section>
+
+      <section class="question intent-question" data-question="9">
+        <div class="question-head"><span class="number">09</span><div><h2>明年（2027 年）前往長沙參加 CMF，你的意願是？</h2><p>請選擇最接近目前想法的答案</p></div></div>
+        <div class="intent-options">
+          <label><input type="radio" name="2027長沙CMF意願" value="非常願意" required><span><b>非常願意</b><small>確定會優先安排</small></span></label>
+          <label><input type="radio" name="2027長沙CMF意願" value="有意願，視日期與費用而定"><span><b>有意願</b><small>視日期與費用而定</small></span></label>
+          <label><input type="radio" name="2027長沙CMF意願" value="還不確定"><span><b>還不確定</b><small>需要更多資訊</small></span></label>
+          <label><input type="radio" name="2027長沙CMF意願" value="意願不高"><span><b>意願不高</b><small>目前沒有優先考慮</small></span></label>
+          <label><input type="radio" name="2027長沙CMF意願" value="不會參加"><span><b>不會參加</b><small>明年暫無規劃</small></span></label>
+        </div>
+        <p class="error" role="alert"></p>
+      </section>
+
+      <section class="question message-question" data-question="10">
+        <div class="question-head"><span class="number">10</span><div><h2>公開留言板｜想對誰說的話</h2><p>送出後所有人都看得到，請勿留下電話等個人資料</p></div></div>
+        <input class="text-input" type="text" name="留言對象" maxlength="20" placeholder="想對誰說？例如：大家、領隊、同桌夥伴">
+        <textarea name="公開留言" rows="3" maxlength="120" required placeholder="寫下一句想公開分享的話……"></textarea>
+        <div class="counter"><span id="messageCount">0</span>/120</div>
+        <p class="error" role="alert"></p>
+      </section>
+
+      <button class="submit-button" type="submit"><span>送出我的回饋</span><b>→</b></button>
+      <p class="privacy">回饋僅供本次活動檢討與未來行程規劃使用。</p>
+    </form>
+
+    <section class="thanks" id="thanks" hidden>
+      <div class="thanks-mark">✓</div>
+      <p class="eyebrow">THANK YOU</p>
+      <h2>收到你的回饋了！</h2>
+      <p>謝謝你和我們一起走過青島、泰山與濟南。期待下一段旅程，再次一起出發。</p>
+      <div class="changsha"><span>下一站</span><strong>長沙 CMF 2027</strong></div>
+      <div class="all-results">
+        <div class="all-results-head"><span>FULL RESULTS</span><h3>大家的完整回覆統計</h3><p>所有題目的統計結果都公開呈現</p></div>
+        <section class="result-section"><h4>01–06｜滿意度評分</h4><div class="rating-stats" id="ratingStats"></div></section>
+        <section class="result-section"><h4>07｜最有印象的三堂課</h4><div class="course-stats" id="courseStats"></div></section>
+        <section class="result-section"><h4>08｜最喜歡或希望改善</h4><div class="feedback-list" id="feedbackList"></div></section>
+      </div>
+      <div class="results" id="voteResults" aria-live="polite">
+        <div class="results-head">
+          <div><span>LIVE POLL</span><h3>大家想去長沙嗎？</h3></div>
+          <div class="vote-total"><strong id="voteTotal">—</strong><small>人已投票</small></div>
+        </div>
+        <div class="result-bars" id="resultBars"></div>
+        <p class="your-vote" id="yourVote"></p>
+      </div>
+      <div class="message-wall">
+        <div class="wall-head"><div><span>TRAVEL VOICES</span><h3>旅伴留言板</h3></div><b id="messageTotal">0 則</b></div>
+        <div class="message-list" id="messageList"></div>
+      </div>
+    </section>
+  </main>
+  <footer>CMF 2026 · 逐浪泉城</footer>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
